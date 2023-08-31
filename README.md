@@ -1,13 +1,13 @@
 # Maliciously-secure PSU
 
-Package psu in mpc4j-s2pc-pso contains the implementations of maliciously-secure protocols in our paper: More Efficient (Resuable) Private Set Union. Specifically, both our two round protocols are implemented in the merpsu22 package with Merpsu22Ahe prefix corresponds to our 2 round protocol and Merpsu22Ot corresponds to our 2 round protocol. 
+Package psu in mpc4j-s2pc-pso contains the implementations of maliciously-secure protocols in our paper: More Efficient (Resuable) Private Set Union. Specifically, both our protocols are implemented in the merpsu22 package with Merpsu22Ahe prefix corresponding to our 2-round protocol and Merpsu22Ot corresponding to our 4-round protocol. 
 
 To run tests:
 1. use Maven to generate jar files (In Intellij IDEA, open maven->expnad mpc4j->expand Lifecycle->double click package.). The configuration files are under conf/psu in mpc4j-s2pc-pso. 
 
 2. Run java -Djava.library.path=/YOUR_MPC4J_ABSOLUTE_PATH/mpc4j-native-tool/cmake-build-release:/YOUR_MPC4J_ABSOLUTE_PATH/mpc4j-native-fhe/cmake-build-release -jar mpc4j-s2pc-pso-X.X.X-jar-with-dependencies.jar conf_file_name.txt separately on two platforms with direct network connections (using the network channel assigned in config files) or on two terminals in one platform (using local network 127.0.0.1). Note that **you need first to run the server and then run the client. **The server and the client implicitly synchronize before running the protocol, and the first step is the client sends something like "hello" to the server. If the server is offline at that time, the program will get stuck.
 
-Below comes from the original Readme File:
+Our implementation is built on top of this brilliant library: https://github.com/alibaba-edu/mpc4j. Below is from its original Readme File:
 
 # mpc4j
 
